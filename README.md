@@ -28,18 +28,18 @@ If you want to contribute, read the [contribution.md](contribution.md)
 ## Technical requirements (on progress)
 
 A user must be able to:
-- create an account
-- create a help request
-  - which consists of:
+- Create an account
+- Create a help request
+  - Which consists of:
     - A request to be made in favor of the requester 
     - An amount of coins to be 
     - A required reputation (amount of unspent goodness coins)
     - Tags required by the user
-- aceept a help request
-- mark a help request as fulfilled and upload pertaining evidence
-- chat with other members
-- search help requests and chat rooms
-  - filtered by tags, such as location, type of help required, etc.
+- Accept a help request
+- Mark a help request as fulfilled and upload pertaining evidence
+- Chat with other members
+- Search help requests and chat rooms
+  - Filtered by tags, such as location, type of help required, etc.
 
 Some rules are:
 - A new user must do a free favor
