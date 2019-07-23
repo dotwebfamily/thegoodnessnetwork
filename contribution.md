@@ -9,12 +9,10 @@ Contributing is managed in teams of five, four members with their respective adm
 Current teams:
 - @zardilior (Jose from mexico)
   - @Divy123
-  - @GilgameshBK
-  - 
+  - @GilgameshBK (Ruben)
+  - @vedanshu-insonix (Mr. Hearts)
 
 - @Joelhopz (HopzCreation)
   - @Tahir500 (Tahir Iqbal)
 
 - @RyanLincolnx (Ryan Lincoln)
-  -
-- 
