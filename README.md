@@ -23,6 +23,8 @@ The goodness network tries to be:
 - A help post portal for good people
 - A promotor of goodness
 
+If you want to contribute, read the [contribution.md](contribution.md)
+
 ## Technical requirements (on progress)
 
 A user must be able to:
