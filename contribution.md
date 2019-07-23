@@ -14,5 +14,8 @@ Current teams:
 
 - @Joelhopz (HopzCreation)
   - @Tahir500 (Tahir Iqbal)
+  - @hadihammurabi (Hadi)
+  - @parveenmittal1 (Praveen)
+  - @bvmCoder
 
 - @RyanLincolnx (Ryan Lincoln)
