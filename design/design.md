@@ -3,11 +3,17 @@
 ## Objective
 To become a good people support community
 
+## Glossary of terms
+Reputation - unspent goodness coins
+Goodness coins - the coins used to pay for help and which amount to reputation
+
 ## Technical requirements
 - Users must be able to:
 
   // User system
   - See their profile
+    - Which contains:
+      - Current reputation 
   - See other's profiles
   - log in
   - register 
@@ -35,4 +41,9 @@ To become a good people support community
   - Join private chats
 
   // Moderation and rankings
+  - Change ranking on fulfulling requirements
+    - the requirements can be:
+      - user approval (x members vote)
+    -
+  - Have moderator access
 
