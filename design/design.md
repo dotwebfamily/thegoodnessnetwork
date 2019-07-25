@@ -74,13 +74,20 @@ Goodness coins - the coins used to pay for help and which amount to reputation
   - Remove friend from list
 
   // chatrooms (stage 2)
+  - Assigns mod power to highest ranking member
+    - Mod can remove people from chat
+    - Mod can block people from entering
   - Search/Filter chatrooms
     - Which can be filtered by
       - tags
   - Join chatrooms
+    - respecting chat members limits
   - Chat in chatrooms
+    - As long as its not more than x messages per minute
   - Receive messages of subscribed chatrooms
   - Join private chats
+  - Block people from private chats
+    - It incurs in penalization
 
   // Moderation and rankings (stage 3)
   - Change ranking on fulfulling requirements
