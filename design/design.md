@@ -16,14 +16,18 @@ Goodness coins - the coins used to pay for help and which amount to reputation
       - Current reputation 
       - Past fulfilled help requests
   - See other's profiles
+    - Which contains:
+      - Current reputation 
+      - Past fulfilled help requests
   - log in
   - register 
 
   // Help requests
   - Post help requests
     - Which have:
-      - Amount to be paid
+      - Title
       - What does the favor consists of
+      - Amount to be paid
       - Required reputation
       - Tags
   - Search/Filter help requests
@@ -35,7 +39,13 @@ Goodness coins - the coins used to pay for help and which amount to reputation
     - If both fulfill, payment is done
     - If anybody doesn't either one can ask a moderator to intervene
 
-  // chatrooms
+  // Friends List (stage 2)
+  - Add a friend
+  - See friends list
+  - Filter friends list
+  - Remove friend from list
+
+  // chatrooms (stage 2)
   - Search/Filter chatrooms
     - Which can be filtered by
       - tags
@@ -44,10 +54,11 @@ Goodness coins - the coins used to pay for help and which amount to reputation
   - Receive messages of subscribed chatrooms
   - Join private chats
 
-  // Moderation and rankings
+  // Moderation and rankings (stage 3)
   - Change ranking on fulfulling requirements
     - the requirements can be:
+      - moderator approval (x members vote)
       - user approval (x members vote)
-    -
+      - minimum reputation
+      - minimum different people helped
   - Have moderator access
-
