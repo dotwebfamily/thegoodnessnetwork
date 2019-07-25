@@ -25,6 +25,8 @@ The goodness network tries to be:
 
 If you want to contribute, read the [contribution.md](contribution.md)
 
+If you are seeking for the design documents, read the [Design Docs](design/design.md)
+
 ## Technical requirements (on progress)
 
 A user must be able to:
