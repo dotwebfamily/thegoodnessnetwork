@@ -19,3 +19,5 @@ Current teams:
   - @bvmCoder
 
 - @RyanLincolnx (Ryan Lincoln)
+  - @TheLeon
+  - @Cmion
