@@ -22,8 +22,8 @@ To become a good people support community
   - Search/Filter help requests
     - Which can be filtered by
       - tags
-  - Accept help requests
-    - Which then go to already in progress
+  - Accept help requests (user accepting will be doing it)
+    - Which then are marked as already in progress and do cannot be accepted by anyone else
   - Mark help requests as fulfilled
     - If both fulfill, payment is done
     - If anybody doesn't either one can ask a moderator to intervene
