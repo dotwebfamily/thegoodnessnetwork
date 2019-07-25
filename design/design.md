@@ -15,12 +15,26 @@ Goodness coins - the coins used to pay for help and which amount to reputation
     - Which contains:
       - Current reputation 
       - Past fulfilled help requests
+      - Ranking history
+      - History of posted requests
   - See other's profiles
     - Which contains:
       - Current reputation 
       - Past fulfilled help requests
-  - log in
-  - register 
+      - Ranking history
+      - History of posted requests
+  - Log in
+  - Register 
+    - Requires user to give:
+      - First name
+      - Last name
+      - Email
+      - Password
+      - Country
+      - picture
+    - or
+      - FB
+  - Recover password
 
   // Help requests
   - Post help requests
@@ -31,9 +45,15 @@ Goodness coins - the coins used to pay for help and which amount to reputation
         - Amount to be paid
         - Required reputation
         - Tags
+        - priority
+        - deadline
       - Given by system:
         - Creation date
+        - Old requests 
   - Repost a previous help request
+  - See fulfilled requests
+  - See on progress requests
+  - See request details
   - Search/Filter help requests
     - Which can be filtered by
       - tags
@@ -45,6 +65,7 @@ Goodness coins - the coins used to pay for help and which amount to reputation
     - If both fulfill, payment is done
     - If anybody doesn't either one can ask a moderator to intervene
   - Report "bad" help requests
+  - physical and emotional 
 
   // Friends List (stage 2)
   - Add a friend
@@ -64,9 +85,9 @@ Goodness coins - the coins used to pay for help and which amount to reputation
   // Moderation and rankings (stage 3)
   - Change ranking on fulfulling requirements
     - the requirements can be:
-      - moderator approval (x members vote)
-      - user approval (x members vote)
-      - minimum reputation
-      - minimum different people helped
+      - Moderator approval (x members vote)
+      - User approval (x members vote)
+      - Minimum reputation
+      - Minimum different people helped
+      - Govt ID
   - Have moderator access if ranking corresponds
-  -
