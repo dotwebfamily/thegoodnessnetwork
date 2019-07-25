@@ -25,19 +25,26 @@ Goodness coins - the coins used to pay for help and which amount to reputation
   // Help requests
   - Post help requests
     - Which have:
-      - Title
-      - What does the favor consists of
-      - Amount to be paid
-      - Required reputation
-      - Tags
+      - Given by user:
+        - Title
+        - What does the favor consists of
+        - Amount to be paid
+        - Required reputation
+        - Tags
+      - Given by system:
+        - Creation date
+  - Repost a previous help request
   - Search/Filter help requests
     - Which can be filtered by
       - tags
-  - Accept help requests (user accepting will be doing it)
-    - Which then are marked as already in progress and do cannot be accepted by anyone else
+  - Apply to a help request (user applying wants to do it)
+  - See help request applicants
+  - Accept a candidate
+    - Which then are marked as already in progress and cannot be applied further
   - Mark help requests as fulfilled
     - If both fulfill, payment is done
     - If anybody doesn't either one can ask a moderator to intervene
+  - Report "bad" help requests
 
   // Friends List (stage 2)
   - Add a friend
@@ -61,4 +68,5 @@ Goodness coins - the coins used to pay for help and which amount to reputation
       - user approval (x members vote)
       - minimum reputation
       - minimum different people helped
-  - Have moderator access
+  - Have moderator access if ranking corresponds
+  -
