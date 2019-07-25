@@ -25,10 +25,14 @@ To become a good people support community
   - Accept help requests
     - Which then go to already in progress
   - Mark help requests as fulfilled
+    - If both fulfill, payment is done
+    - If anybody doesn't either one can ask a moderator to intervene
 
   // chatrooms
   - Join chatrooms
   - Chat in chatrooms
   - Receive messages of subscribed chatrooms
   - Join private chats
+
+  // Moderation and rankings
 
