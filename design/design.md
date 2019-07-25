@@ -46,7 +46,7 @@ Goodness coins - the coins used to pay for help and which amount to reputation
         - Required reputation
         - Tags
         - priority
-        - deadline
+        - deadline or permanent
       - Given by system:
         - Creation date
         - Old requests 
@@ -65,7 +65,7 @@ Goodness coins - the coins used to pay for help and which amount to reputation
     - If both fulfill, payment is done
     - If anybody doesn't either one can ask a moderator to intervene
   - Report "bad" help requests
-  - physical and emotional 
+  - physical and emotional, require ranking 1
 
   // Friends List (stage 2)
   - Add a friend
