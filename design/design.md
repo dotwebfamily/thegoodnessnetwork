@@ -20,5 +20,5 @@ See [technical_requirements.md](technical_requirements.md)
 - Rankings and moderation
 
 ### User System
-See [user_system.md](user_system.md.md)
+See [user_system.md](user_system.md)
 
