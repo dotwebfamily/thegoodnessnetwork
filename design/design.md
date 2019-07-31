@@ -8,7 +8,7 @@ Reputation - unspent goodness coins
 Goodness coins - the coins used to pay for help and which amount to reputation
 
 ## Technical requirements
-See [technical_requirements.md](technical_requirements.md) 
+See [technical requirements.md](technical_requirements.md) 
 
 ## Architecture
 
@@ -20,5 +20,7 @@ See [technical_requirements.md](technical_requirements.md)
 - Rankings and moderation
 
 ### User System
-See [user_system.md](user_system.md)
+See [user system.md](user_system.md)
 
+### Help Requests
+See [help requests.md](help_requests.md)
