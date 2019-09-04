@@ -105,15 +105,8 @@ function setValidate(app,config){
 }
 
 function setRoutes(app,config){
-    // rutas donde se pasa el app para extenderlo
-    const rutasCompras = require('./rutas/compras')(app);
-    const rutasVentas = require('./rutas/ventas')(app);
-    const rutasInventario = require('./rutas/inventario')(app);
-    const rutasGastos = require('./rutas/gastos')(app);
-    const rutasReportes = require('./rutas/reportes')(app);
-    const rutasUsuarios = require('./rutas/usuarios')(app);
-    const rutasProductos = require('./rutas/productos')(app);
-    const rutasPrecios = require('./rutas/precios')(app);
+    // get and post routes
+    const routesCompras = require('./routes/compras')(app);
 }
 function serverReady(app,events){
    let eventNum = events.length;
