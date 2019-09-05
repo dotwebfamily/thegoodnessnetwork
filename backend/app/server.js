@@ -88,7 +88,8 @@ function setMongoPool(app,config){
     // set mongoDB connection
     const MongoClient = config.mongodb.MongoClient;
     const client = MongoClient.connect(config.mongoUrl,{
-        poolSize:20
+        poolSize:20,
+        useNewUrlParser: true 
     }).then((client)=>{
         app.set('mongoClient',client);
         app.set('mongodb',client.db(config.mongoDatabase));

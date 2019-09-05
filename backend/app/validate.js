@@ -1,7 +1,7 @@
 const debug = require('debug')('app/validate')
 // json schema validator
 const Validator = require('jsonschema').Validator;
-const referencias = require('./validaciones/referencias'); 
+const referencias = require('./validations/references'); 
 const v = new Validator();
 referencias.forEach(function(schema){
    v.addSchema(schema,schema.id); 
