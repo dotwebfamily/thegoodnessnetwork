@@ -24,3 +24,9 @@ See [user system.md](user_system.md)
 
 ### Help Requests
 See [help requests.md](help_requests.md)
+
+### Chatrooms 
+See [chatrooms.md](chatrooms.md)
+
+### Rankings and moderation 
+See [rankings moderation.md](help_moderation.md)
