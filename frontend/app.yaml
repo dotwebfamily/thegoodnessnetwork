@@ -4,11 +4,14 @@ threadsafe: true
 
 handlers:
   
-- url: /stylesheets
-  static_dir: stylesheets
+- url: /css
+  static_dir: css
   
 - url: /images
   static_dir: images
+
+- url: /bootstrap-4.2.1-dist
+  static_dir: bootstrap-4.2.1-dist
 
 - url: /
   static_files: www/index.html
