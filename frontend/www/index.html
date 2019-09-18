@@ -10,7 +10,7 @@
   <static-files>
       <include path="**.*"/>
           <include path="/images/**.*" />
-      </static-files>
+  </static-files>
   <style>
   html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   </style>
@@ -27,9 +27,9 @@
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>     
       <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-        <a href="#" class="w3-bar-item w3-button">One new friend request</a>
-        <a href="#" class="w3-bar-item w3-button">John Doe posted on your wall</a>
-        <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
+        <a href="#" class="w3-bar-item w3-button">10 new favors that suits you</a>
+        <a href="#" class="w3-bar-item w3-button">John Doe posted a new favor</a>
+        <a href="#" class="w3-bar-item w3-button">Jane shared your favor post</a>
       </div>
     </div>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
@@ -58,8 +58,7 @@
           <h4 class="w3-center">My Profile</h4>
           <p class="w3-center"><img src="../images/avatar2.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
           <hr>
-          <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
+          <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Skills: Office, Windows, ...</p>
           <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
           </div>
         </div>
@@ -68,35 +67,29 @@
         <!-- Accordion -->
         <div class="w3-card w3-round">
           <div class="w3-white">
-            <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
+            <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Favors</button>
             <div id="Demo1" class="w3-hide w3-container">
-              <p>Some text..</p>
+              <p>No pending favors ...</p>
             </div>
-            <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>
+            <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> Schedule</button>
             <div id="Demo2" class="w3-hide w3-container">
-              <p>Some other text..</p>
+              <p>You are not participating in any favor at the moment...</p>
             </div>
-            <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
+            <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> Coworkers</button>
             <div id="Demo3" class="w3-hide w3-container">
           <div class="w3-row-padding">
           <br>
             <div class="w3-half">
-              <img src="../images/lights.jpg" style="width:100%" class="w3-margin-bottom">
+              <img src="../images/avatar.jpg" style="width:100%" class="w3-margin-bottom">
             </div>
             <div class="w3-half">
-              <img src="../images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+              <img src="../images/avatar2.png" style="width:100%" class="w3-margin-bottom">
             </div>
             <div class="w3-half">
-              <img src="../images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
+              <img src="../images/avatar3.png" style="width:100%" class="w3-margin-bottom">
             </div>
             <div class="w3-half">
-              <img src="../images/forest.jpg" style="width:100%" class="w3-margin-bottom">
-            </div>
-            <div class="w3-half">
-              <img src="../images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-            </div>
-            <div class="w3-half">
-              <img src="../images/snow.jpg" style="width:100%" class="w3-margin-bottom">
+              <img src="../images/avatar6.png" style="width:100%" class="w3-margin-bottom">
             </div>
           </div>
             </div>
@@ -107,19 +100,19 @@
         <!-- Interests --> 
         <div class="w3-card w3-round w3-white w3-hide-small">
           <div class="w3-container">
-            <p>Interests</p>
+            <p>Skills</p>
             <p>
-              <span class="w3-tag w3-small w3-theme-d5">News</span>
-              <span class="w3-tag w3-small w3-theme-d4">The Good Network</span>
-              <span class="w3-tag w3-small w3-theme-d3">Labels</span>
-              <span class="w3-tag w3-small w3-theme-d2">Games</span>
-              <span class="w3-tag w3-small w3-theme-d1">Friends</span>
-              <span class="w3-tag w3-small w3-theme">Games</span>
-              <span class="w3-tag w3-small w3-theme-l1">Friends</span>
-              <span class="w3-tag w3-small w3-theme-l2">Food</span>
-              <span class="w3-tag w3-small w3-theme-l3">Design</span>
-              <span class="w3-tag w3-small w3-theme-l4">Art</span>
-              <span class="w3-tag w3-small w3-theme-l5">Photos</span>
+              <span class="w3-tag w3-small w3-theme-d5">Office</span>
+              <span class="w3-tag w3-small w3-theme-d4">Network</span>
+              <span class="w3-tag w3-small w3-theme-d3">Windows 10</span>
+              <span class="w3-tag w3-small w3-theme-d2">Visual Studio Code</span>
+              <span class="w3-tag w3-small w3-theme-d1">C#</span>
+              <span class="w3-tag w3-small w3-theme">C++</span>
+              <span class="w3-tag w3-small w3-theme-l1">C</span>
+              <span class="w3-tag w3-small w3-theme-l2">.NET</span>
+              <span class="w3-tag w3-small w3-theme-l3">Photoshop</span>
+              <span class="w3-tag w3-small w3-theme-l4">Excel</span>
+              <span class="w3-tag w3-small w3-theme-l5">Macros</span>
             </p>
           </div>
         </div>
@@ -131,7 +124,7 @@
             <i class="fa fa-remove"></i>
           </span>
           <p><strong>Hey!</strong></p>
-          <p>People are looking at your profile. Find out who.</p>
+          <p>People are looking for favors. Find out who.</p>
         </div>
       
       <!-- End Left Column -->
@@ -144,8 +137,8 @@
           <div class="w3-col m12">
             <div class="w3-card w3-round w3-white">
               <div class="w3-container w3-padding">
-                <h6 class="w3-opacity">Social Media</h6>
-                <p contenteditable="true" class="w3-border w3-padding">Status: Feeling Blue</p>
+                <h6 class="w3-opacity">Favors</h6>
+                <p contenteditable="true" class="w3-border w3-padding">My Favor: Post your issue</p>
                 <button type="button" class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
               </div>
             </div>
@@ -157,17 +150,17 @@
           <span class="w3-right w3-opacity">1 min</span>
           <h4>John Doe</h4><br>
           <hr class="w3-clear">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>I am having a problem in Visual Studio Code when attempting to create a particular class within the .NET version of our project. Does anyone knows how can I fix it?</p>
             <div class="w3-row-padding" style="margin:0 -16px">
               <div class="w3-half">
-                <img src="../images/lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+                <img src="../images/VSC.gif" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
               </div>
               <div class="w3-half">
-                <img src="../images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
+                <img src="../images/VSC.jpeg" style="width:100%" alt="Nature" class="w3-margin-bottom">
             </div>
           </div>
-          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Help</button> 
+          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> Comment</button> 
         </div>
         
         <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
@@ -175,8 +168,8 @@
           <span class="w3-right w3-opacity">16 min</span>
           <h4>Jane Doe</h4><br>
           <hr class="w3-clear">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+          <p>Hi everyone! Unfortunately I have a very important personal commitment on Friday after 3 pm, could someone replace me for a couple of hours?</p>
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Help</button> 
           <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
         </div>  
 
@@ -185,10 +178,10 @@
           <span class="w3-right w3-opacity">32 min</span>
           <h4>Angie Jane</h4><br>
           <hr class="w3-clear">
-          <p>Have you seen this?</p>
-          <img src="../images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+          <p>Free accounting course available</p>
+          <img src="../images/accounting.jpg" style="width:100%" class="w3-margin-bottom">
+          <p>We have a free accounting course available for those who want to develop their skills. The appointment is in the A building on Friday at 6 pm.</p>
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Assist</button> 
           <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
         </div> 
         
@@ -199,9 +192,9 @@
       <div class="w3-col m2">
         <div class="w3-card w3-round w3-white w3-center">
           <div class="w3-container">
-            <p>Upcoming Events:</p>
-            <img src="../images/forest.jpg" alt="Forest" style="width:100%;">
-            <p><strong>Holiday</strong></p>
+            <p>Upcoming Deadlines:</p>
+            <img src="../images/excel.jpg" alt="Forest" style="width:100%;">
+            <p><strong>Macros Issue</strong></p>
             <p>Friday 15:00</p>
             <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
           </div>
@@ -210,7 +203,7 @@
         
         <div class="w3-card w3-round w3-white w3-center">
           <div class="w3-container">
-            <p>Friend Request</p>
+            <p>Favor Request</p>
             <img src="../images/avatar6.png" alt="Avatar" style="width:50%"><br>
             <span>Jane Doe</span>
             <div class="w3-row w3-opacity">
@@ -246,7 +239,7 @@
 
   <!-- Footer -->
   <footer class="w3-container w3-theme-d3 w3-padding-16">
-    <h5>Footer</h5>
+    <h5>The Good Network</h5>
   </footer>
 
   <script>
