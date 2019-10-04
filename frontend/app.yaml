@@ -1,0 +1,22 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+  
+- url: /css
+  static_dir: css
+  
+- url: /images
+  static_dir: images
+
+- url: /bootstrap-4.2.1-dist
+  static_dir: bootstrap-4.2.1-dist
+
+- url: /
+  static_files: www/index.html
+  upload: www/index.html
+
+- url: /(.*)
+  static_files: www/\1
+  upload: www/(.*)

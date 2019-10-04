@@ -12,6 +12,7 @@ The user system is in charge of user related tasks such as log in, registration,
   - change password
   - email verification code page
 ### Components
+    -profile Pic
 
 ## Backend
 
