@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = process.env.port || 4000
+const PORT = process.env.PORT || 4000
 const cors = require('cors');
 const dCors = cors({
   origin: (origin,callback) =>{
@@ -49,6 +49,6 @@ app.use('/auth', auth.route)
 app.use('/favors', auth.middleware)
 app.use('/favors', favors)
 
-app.listen(port, function(){
-  console.log(`Example app listening on port ${port}!`)
+app.listen(PORT, function(){
+  console.log(`Example app listening on PORT ${PORT}!`)
 })

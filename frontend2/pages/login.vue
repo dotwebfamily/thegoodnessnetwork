@@ -65,6 +65,10 @@ export default {
           data,
           { withCredentials: true }
         )
+        this.$store.commit('login')
+        this.$router.push({
+          path: '/favors'
+        })
       } catch (e) {
         alert(e.response.data)
       }

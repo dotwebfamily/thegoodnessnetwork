@@ -1,5 +1,4 @@
 runtime: nodejs10
-service: backend
 manual_scaling:
   instances: 1
 resources:

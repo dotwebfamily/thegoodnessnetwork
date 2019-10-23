@@ -66,6 +66,15 @@ export default {
           data,
           { withCredentials: true }
         )
+        await this.$axios.post(
+          `${this.$url}/auth/login`,
+          data,
+          { withCredentials: true }
+        )
+        this.$store.commit('login')
+        this.$router.push({
+          path: '/favors'
+        })
       } catch (e) {
         alert(e.response.data)
       }
