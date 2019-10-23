@@ -1,0 +1,4 @@
+{
+  "GCLOUD_PROJECT": "goodnet-testenv",
+  "DATA_BACKEND": "datastore"
+}
