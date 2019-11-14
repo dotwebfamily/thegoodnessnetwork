@@ -6,21 +6,22 @@
           <h1>LOGIN</h1>
           <v-form v-model="valid">
             <v-text-field
-              v-model="email"
-              placeholder="Email"
+              v-model="loginForm.email"
+              label="Email"
               :rules="[rules.required, rules.email]"
             />
             <v-text-field
-              v-model="password"
-              placeholder="Password"
+              v-model="loginForm.password"
+              label="Password"
               :append-icon="show1 ? eye : eye_off"
               :rules="[rules.required, rules.min]"
               :type="show1 ? 'text' : 'password'"
+              @click:append="show1 = !show1"
             />
           </v-form>
           <v-btn
             :disabled="!valid"
-            @click="login()"
+            @click="login"
           >
             Login
           </v-btn>
@@ -42,8 +43,7 @@ export default {
     return {
       valid: false,
       show1: false,
-      email: null,
-      password: null,
+      loginForm: {},
       eye: mdiEye,
       eye_off: mdiEyeOff,
       rules: {
@@ -55,14 +55,10 @@ export default {
   },
   methods: {
     async login () {
-      const data = {
-        email: this.email,
-        password: this.password
-      }
       try {
         await this.$axios.post(
           `${this.$url}/auth/login`,
-          data,
+          this.loginForm,
           { withCredentials: true }
         )
         this.$store.commit('login')
