@@ -45,7 +45,7 @@ router.post('/register', function(req, res){
 })
 
 const middleware = function(req, res, next) {
-  console.log(req.session)
+  console.log("session",req.session)
   if (req.session.isAuthenticated)
     next()
   else

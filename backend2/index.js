@@ -1,15 +1,16 @@
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 4000
-const cors = require('cors');
-const dCors = cors({
+const Cors = require('cors');
+const cors = Cors({
   origin: (origin,callback) =>{
     callback(null,true)
   },
   credentials:true
 })
-app.use(dCors)
-app.options('*',dCors)
+
+app.use(cors)
+app.options('*',cors)
 
 app.get('/', function(req,res) {
   res.send('It is working')
