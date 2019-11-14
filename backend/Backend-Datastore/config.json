@@ -1,4 +1,4 @@
 {
-  "GCLOUD_PROJECT": "goodnet-testenv",
+  "GCLOUD_PROJECT": "proyecto-integrador-red-social",
   "DATA_BACKEND": "datastore"
 }
