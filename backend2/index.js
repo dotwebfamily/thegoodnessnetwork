@@ -10,7 +10,6 @@ const cors = Cors({
 })
 
 app.use(cors)
-app.options('*',cors)
 
 app.get('/', function(req,res) {
   res.send('It is working')
