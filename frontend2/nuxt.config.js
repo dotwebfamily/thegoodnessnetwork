@@ -31,7 +31,7 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '@/plugins/url'  
+    '@/plugins/url'
   ],
   /*
    ** Nuxt.js dev-modules
@@ -81,6 +81,6 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend (config, ctx) {}
   }
 }

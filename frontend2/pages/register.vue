@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row align="center" justify="center">
       <v-col cols="4" md="8" class="image">
-        <img src="~/assets/img/background.jpg" />
+        <img src="~/assets/img/background.jpg">
       </v-col>
       <v-col cols="8" md="4">
         <h2>CREATE ACCOUNT</h2>
