@@ -19,11 +19,30 @@ class User{
     const res = await this.col.find(
       {'email':email,'password':password}
     ).toArray()
-    this.ldebug('login-result',res)
+    this.ldebug('login-result',res[0])
     return res[0]
   }
 }
 module.exports.User = User
+
+class Organization{
+  constructor(req){
+    this.db = req.db 
+    this.session = req.session
+    this.col = this.db.db().collection('organization')
+    this.ldebug = debug('app/models/organization')
+  }
+  async create(obj) {
+    const res = await this.col.insertOne(obj)
+    return res.result.ok
+  }
+  async find(domain) {
+    const res = await this.col.find({'domain':domain}).toArray()
+    this.ldebug(res[0])
+    return res[0]
+  }
+}
+module.exports.Organization = Organization
 
 class Favor{
     constructor(req){
