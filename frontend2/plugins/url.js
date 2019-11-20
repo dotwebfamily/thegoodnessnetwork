@@ -1,5 +1,4 @@
 export default ({ app, env }, inject) => {
-  // const url = 'http://backend-dot-proyecto-integrador-red-social.appspot.com'
-  const url = 'http://localhost:4000'
+  const url = env.backendUrl
   return inject('url', url)
 }

@@ -62,14 +62,12 @@ export default {
       }
       try {
         await this.$axios.post(
-          `${this.$url}/auth/register`,
-          data,
-          { withCredentials: true }
+          `/auth/register`,
+          data
         )
         await this.$axios.post(
-          `${this.$url}/auth/login`,
-          data,
-          { withCredentials: true }
+          `/auth/login`,
+          data
         )
         this.$store.commit('login')
         this.$router.push({

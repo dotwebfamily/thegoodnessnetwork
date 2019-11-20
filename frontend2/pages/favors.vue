@@ -26,8 +26,7 @@
 export default {
   async asyncData ({ app }) {
     const result = await app.$axios.get(
-      `${app.$url}/favors`,
-      { withCredentials: true }
+      `/favors`
     )
     return {
       favors: result.data

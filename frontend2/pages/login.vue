@@ -57,9 +57,8 @@ export default {
     async login () {
       try {
         await this.$axios.post(
-          `${this.$url}/auth/login`,
-          this.loginForm,
-          { withCredentials: true }
+          `/auth/login`,
+          this.loginForm
         )
         this.$store.commit('login')
         this.$router.push({
