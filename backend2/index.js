@@ -2,6 +2,11 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 4000
 const Cors = require('cors');
+const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
+const MongoClient = require('mongodb').MongoClient;
+const debug = require('debug')
+
 const cors = Cors({
   origin: (origin,callback) =>{
     callback(null,true)
@@ -15,32 +20,60 @@ app.get('/', function(req,res) {
   res.send('It is working')
 })
 
-const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://redsocial:Redsocial1@cluster0-umels.gcp.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
-  poolSize: 10
+  poolSize: 10,
 })
+
 
 app.use(express.json())
 
-app.use(function(req, res, next) {
-  client.connect(function(err, db){
-    if (err) res.status(500).send('DB Error!') 
-    req.db = db
-    next()
-  })
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false,
+  store: new MongoStore({ client })
+}))
+let mongoDB;
+client.connect(function(err, client){
+  const ldebug = debug('app/db')
+  if (err){
+    ldebug('error connecting')
+    return
+  } 
+  ldebug('connection successfull')
+  mongoDB = client
 })
 
+app.use(function(req, res, next) {
+  const ldebug = debug('app/db-middleware')
+  ldebug('db connected')
+  req.db = mongoDB 
+  next()
+})
+app.use(function(req, res, next) {
+  const ldebug = debug('app/route-logger')
+  ldebug(req.url)
+  ldebug(req.body)
+  req.ldebug = debug('app/route'+req.url)
+  next()
+})
+/*
+app.use(function (req, res) {
+  const ldebug = debug('app/after-logger')
+  ldebug(req.url)
+  var send = res.send;
+  res.send = function (body) { 
+    ldebug(Object.keys(body))
+    send.call(this, body);
+  };
+  next()
+});
+*/
 app.get('/db', function(req, res) {
   res.send('db works')
 })
-
-const session = require('express-session')
-app.use(session({
-  secret: 'secret'
-}))
-
 
 const auth = require('./routes/auth')
 const favors = require('./routes/favors')

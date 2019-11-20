@@ -10,10 +10,12 @@ router.get('/logout', function(req, res){
 })
 router.post('/login', function(req, res){
   const user = new User(req)
+  req.ldebug(user)
   user.login(
     req.body.email,
     req.body.password
   ).then(function(user) {
+    req.ldebug('then',user)
     if(user) {
       req.session.email = req.body.email
       req.session.isAuthenticated = true
@@ -22,7 +24,12 @@ router.post('/login', function(req, res){
     else {
       res.status(500).send('Login Failed')
     }
-  })
+  }).catch(
+    (error)=>{
+      res.status(500).send('Login Failed')
+      req.ldebug(error)
+    }
+  )
 })
 
 // create a domain

@@ -301,6 +301,7 @@ export default {
     doPost () {
       alert('post succesfull' + this.post)
     },
+
     // Accordion
     myFunction (id) {
       const x = document.getElementById(id)
@@ -310,7 +311,7 @@ export default {
       } else {
         x.className = x.className.replace('w3-show', '')
         x.previousElementSibling.className =
-      x.previousElementSibling.className.replace(' w3-theme-d1', '')
+          x.previousElementSibling.className.replace(' w3-theme-d1', '')
       }
     },
 
