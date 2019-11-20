@@ -4,9 +4,13 @@
       <v-col cols="4" md="8" class="image">
         <img src="~/assets/img/background.jpg">
       </v-col>
-      <v-col cols="8" md="4">
+      <v-col
+        v-show="!confirmOrganization"
+        cols="8"
+        md="4"
+      >
         <h2>CREATE ACCOUNT</h2>
-        <v-form v-model="valid">
+        <v-form ref="form" v-model="valid">
           <v-text-field
             v-model="email"
             placeholder="Email"
@@ -32,6 +36,35 @@
           Or login
         </nuxt-link>
       </v-col>
+      <v-col
+        v-show="confirmOrganization"
+        cols="8"
+        md="4"
+      >
+        <h2>CONFIRM ORGANIZATION CREATION</h2>
+        <small>
+          The organization is not yet created.
+          if you create it, your email will be the admin.
+        </small>
+        <v-form v-model="valid">
+          <v-text-field
+            v-model="organization"
+            placeholder="Organization Name"
+            :rules="[rules.required]"
+          />
+        </v-form>
+        <v-btn
+          @click="reset"
+        >
+          Or login with another account
+        </v-btn>
+        <v-btn
+          :disabled="!valid"
+          @click="registerOrganization()"
+        >
+          Create
+        </v-btn>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -45,8 +78,10 @@ export default {
       show1: false,
       email: null,
       password: null,
+      organization: null,
       eye: mdiEye,
       eye_off: mdiEyeOff,
+      confirmOrganization: false,
       rules: {
         required: value => !!value || 'Required.',
         min: v => v ? v.length >= 8 || 'Min 8 characters' : false,
@@ -55,27 +90,61 @@ export default {
     }
   },
   methods: {
+    reset () {
+      this.confirmOrganization = false
+      console.log(this.$refs)
+      this.$refs.form.reset()
+    },
     async register () {
       const data = {
         email: this.email,
         password: this.password
       }
       try {
-        await this.$axios.post(
+        const response = await this.$axios.post(
           `/auth/register`,
           data
         )
-        await this.$axios.post(
-          `/auth/login`,
-          data
-        )
-        this.$store.commit('login')
-        this.$router.push({
-          path: '/favors'
-        })
+        if (!response.data.confirm) {
+          this.login()
+        } else {
+          this.confirmOrganization = true
+        }
       } catch (e) {
         alert(e.response.data)
       }
+    },
+    async registerOrganization () {
+      try {
+        const data = {
+          organization: this.organization,
+          admin: {
+            email: this.email,
+            password: this.password
+          }
+        }
+        await this.$axios.post(
+          `/auth/register/organization`,
+          data
+        )
+        this.login()
+      } catch (e) {
+        alert(e.response.data)
+      }
+    },
+    async login () {
+      const data = {
+        email: this.email,
+        password: this.password
+      }
+      await this.$axios.post(
+        `/auth/login`,
+        data
+      )
+      this.$store.commit('login')
+      this.$router.push({
+        path: '/favors'
+      })
     }
   }
 }

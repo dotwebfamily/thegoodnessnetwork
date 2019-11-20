@@ -63,19 +63,19 @@
           <!-- Accordion -->
           <div class="w3-card w3-round">
             <div class="w3-white">
-              <button @click="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align">
+              <button class="w3-button w3-block w3-theme-l1 w3-left-align" @click="myFunction('Demo1')">
                 <i class="fa fa-circle-o-notch fa-fw w3-margin-right" /> My Favors
               </button>
               <div id="Demo1" class="w3-hide w3-container">
                 <p>No pending favors ...</p>
               </div>
-              <button @click="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align">
+              <button class="w3-button w3-block w3-theme-l1 w3-left-align" @click="myFunction('Demo2')">
                 <i class="fa fa-calendar-check-o fa-fw w3-margin-right" /> Schedule
               </button>
               <div id="Demo2" class="w3-hide w3-container">
                 <p>You are not participating in any favor at the moment...</p>
               </div>
-              <button @click="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align">
+              <button class="w3-button w3-block w3-theme-l1 w3-left-align" @click="myFunction('Demo3')">
                 <i class="fa fa-users fa-fw w3-margin-right" /> Coworkers
               </button>
               <div id="Demo3" class="w3-hide w3-container">
@@ -122,7 +122,7 @@
 
           <!-- Alert Box -->
           <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
-            <span  class="w3-button w3-theme-l3 w3-display-topright">
+            <span class="w3-button w3-theme-l3 w3-display-topright">
               <i class="fa fa-remove" />
             </span>
             <p><strong>Hey!</strong></p>
