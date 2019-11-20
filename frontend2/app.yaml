@@ -27,4 +27,4 @@ handlers:
 env_variables:
   HOST: '0.0.0.0'
   NODE_ENV: 'production'
-  BACKEND_API: 'http://backend-dot-proyecto-integrador-red-social.appspot.com/'
+  BACKEND_URL: 'http://backend-dot-proyecto-integrador-red-social.appspot.com/'
