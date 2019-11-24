@@ -92,7 +92,6 @@ export default {
   methods: {
     reset () {
       this.confirmOrganization = false
-      console.log(this.$refs)
       this.$refs.form.reset()
     },
     async register () {
@@ -111,7 +110,7 @@ export default {
           this.confirmOrganization = true
         }
       } catch (e) {
-        alert(e.response.data)
+        this.$alert(e.response.data, 'error')
       }
     },
     async registerOrganization () {
@@ -129,7 +128,7 @@ export default {
         )
         this.login()
       } catch (e) {
-        alert(e.response.data)
+        this.$alert(e.response.data, 'error')
       }
     },
     async login () {

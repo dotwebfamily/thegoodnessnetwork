@@ -27,15 +27,16 @@ module.exports = {
    ** Global CSS
    */
   css: [],
-  /*
-   ** Plugins to load before mounting the App
-   */
   env: {
     backendUrl: process.env.BACKEND_URL || 'http://localhost:4000'
   },
+  /*
+   ** Plugins to load before mounting the App
+   */
   plugins: [
     '@/plugins/url',
-    '@/plugins/axios'
+    '@/plugins/axios',
+    '@/plugins/alert'
   ],
   /*
    ** Nuxt.js dev-modules

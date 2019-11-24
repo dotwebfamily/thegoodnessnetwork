@@ -56,16 +56,17 @@ export default {
   methods: {
     async login () {
       try {
-        await this.$axios.post(
+        const response = await this.$axios.post(
           `/auth/login`,
           this.loginForm
         )
         this.$store.commit('login')
+        this.$store.commit('setUser', response.data.user)
         this.$router.push({
           path: '/favors'
         })
       } catch (e) {
-        alert(e.response.data)
+        this.$alert(e.response.data, 'error')
       }
     }
   }

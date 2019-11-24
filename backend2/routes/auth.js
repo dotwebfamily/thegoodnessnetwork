@@ -5,9 +5,8 @@ const Organization = require('../models').Organization
 
 // login into an account
 router.get('/logout', function(req, res){
-  req.session.email = null
-  req.session.isAuthenticated = false
-  req.session.save()
+  req.session.destroy()
+  res.send('success')
 })
 router.post('/login', function(req, res){
   const user = new User(req)
@@ -20,7 +19,17 @@ router.post('/login', function(req, res){
     if(user) {
       req.session.email = req.body.email
       req.session.isAuthenticated = true
-      res.send('success')
+      req.session.admin = user.admin
+      const domain = req.body.email.match(/^.+@(.+\..+)$/)[1]
+      req.session.organization = domain
+      res.send({ 
+        message:'success',
+        user: {
+          email: user.email,
+          admin: user.admin,
+          organization: domain
+        }
+      })
     }
     else {
       res.status(500).send('Login Failed')
