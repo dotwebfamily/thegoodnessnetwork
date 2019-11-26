@@ -1,8 +1,8 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-row align="center" justify="center">
       <v-col cols="8" md="6">
-        <v-sheet elevation="12" class="pa-12">
+        <v-sheet color="blue-grey darken-4" elevation="12" class="pa-12">
           <h1>LOGIN</h1>
           <v-form v-model="valid">
             <v-text-field
@@ -76,5 +76,10 @@ export default {
 .row {
   height:100vh;
   text-align:center;
+}
+.container {
+  background: url(../assets/img/background.png);
+  background-size: cover;
+  background-attachment: fixed;
 }
 </style>
