@@ -59,7 +59,7 @@ export default {
       {
         title: 'Home',
         icon: 'mdi-home',
-        link: '/favors'
+        link: '/home'
       },
       {
         title: 'Profile',

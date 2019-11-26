@@ -63,7 +63,7 @@ export default {
         this.$store.commit('login')
         this.$store.commit('setUser', response.data.user)
         this.$router.push({
-          path: '/favors'
+          path: '/home'
         })
       } catch (e) {
         this.$alert(e.response.data, 'error')

@@ -1,334 +1,39 @@
 <template>
-  <!-- Navbar -->
-  <div>
-    <link rel="sheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <div class="w3-top">
-      <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" @click="openNav()"><i class="fa fa-bars" /></a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right" />The Good Network</a>
-        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe" /></a>
-        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user" /></a>
-        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope" /></a>
-        <div class="w3-dropdown-hover w3-hide-small">
-          <button class="w3-button w3-padding-large" title="Notifications">
-            <i class="fa fa-bell" /><span class="w3-badge w3-right w3-small w3-green">3</span>
-          </button>
-          <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-            <a href="#" class="w3-bar-item w3-button">10 new favors that suits you</a>
-            <a href="#" class="w3-bar-item w3-button">John Doe posted a new favor</a>
-            <a href="#" class="w3-bar-item w3-button">Jane shared your favor post</a>
-          </div>
-        </div>
-        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
-          <img src="@/assets/img/avatar.jpg" class="w3-circle" style="height:23px;width:23px" alt="avatar">
-        </a>
-      </div>
-    </div>
-
-    <!-- Navbar on small screens -->
-    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">My profile</a>
-    </div>
-
-    <!-- Page Container -->
-    <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
-      <!-- The Grid -->
-      <div class="w3-row">
-        <!-- Left Column -->
-        <div class="w3-col m3">
-          <!-- Profile -->
-          <div class="w3-card w3-round w3-white">
-            <div class="w3-container">
-              <h4 class="w3-center">
-                My profile
-              </h4>
-              <p class="w3-center">
-                <img src="@/assets/img/avatar2.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
-              </p>
-              <hr>
-              <p><img src="@/assets/img/coin.png" alt="Points" height="20" width="20">  Coins: 50  </p>
-              <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme" /> Skills: Office, Windows, ...</p>
-              <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme" /> April 1, 1988</p>
-            </div>
-          </div>
-          <br>
-
-          <!-- Accordion -->
-          <div class="w3-card w3-round">
-            <div class="w3-white">
-              <button class="w3-button w3-block w3-theme-l1 w3-left-align" @click="myFunction('Demo1')">
-                <i class="fa fa-circle-o-notch fa-fw w3-margin-right" /> My Favors
-              </button>
-              <div id="Demo1" class="w3-hide w3-container">
-                <p>No pending favors ...</p>
-              </div>
-              <button class="w3-button w3-block w3-theme-l1 w3-left-align" @click="myFunction('Demo2')">
-                <i class="fa fa-calendar-check-o fa-fw w3-margin-right" /> Schedule
-              </button>
-              <div id="Demo2" class="w3-hide w3-container">
-                <p>You are not participating in any favor at the moment...</p>
-              </div>
-              <button class="w3-button w3-block w3-theme-l1 w3-left-align" @click="myFunction('Demo3')">
-                <i class="fa fa-users fa-fw w3-margin-right" /> Coworkers
-              </button>
-              <div id="Demo3" class="w3-hide w3-container">
-                <div class="w3-row-padding">
-                  <br>
-                  <div class="w3-half">
-                    <img src="@/assets/img/avatar.jpg" style="width:100%" class="w3-margin-bottom">
-                  </div>
-                  <div class="w3-half">
-                    <img src="@/assets/img/avatar2.png" style="width:100%" class="w3-margin-bottom">
-                  </div>
-                  <div class="w3-half">
-                    <img src="@/assets/img/avatar3.png" style="width:100%" class="w3-margin-bottom">
-                  </div>
-                  <div class="w3-half">
-                    <img src="@/assets/img/avatar6.png" style="width:100%" class="w3-margin-bottom">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br>
-
-          <!-- Interests -->
-          <div class="w3-card w3-round w3-white w3-hide-small">
-            <div class="w3-container">
-              <p>Skills</p>
-              <p>
-                <span class="w3-tag w3-small w3-theme-d5">Office</span>
-                <span class="w3-tag w3-small w3-theme-d4">Network</span>
-                <span class="w3-tag w3-small w3-theme-d3">Windows 10</span>
-                <span class="w3-tag w3-small w3-theme-d2">Visual Studio Code</span>
-                <span class="w3-tag w3-small w3-theme-d1">C#</span>
-                <span class="w3-tag w3-small w3-theme">C++</span>
-                <span class="w3-tag w3-small w3-theme-l1">C</span>
-                <span class="w3-tag w3-small w3-theme-l2">.NET</span>
-                <span class="w3-tag w3-small w3-theme-l3">Photoshop</span>
-                <span class="w3-tag w3-small w3-theme-l4">Excel</span>
-                <span class="w3-tag w3-small w3-theme-l5">Macros</span>
-              </p>
-            </div>
-          </div>
-          <br>
-
-          <!-- Alert Box -->
-          <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
-            <span class="w3-button w3-theme-l3 w3-display-topright">
-              <i class="fa fa-remove" />
-            </span>
-            <p><strong>Hey!</strong></p>
-            <p>People are looking for favors. Find out who.</p>
-          </div>
-
-        <!-- End Left Column -->
-        </div>
-
-        <!-- Middle Column -->
-        <div class="w3-col m7">
-          <div class="w3-row-padding">
-            <div class="w3-col m12">
-              <div class="w3-card w3-round w3-white">
-                <div class="w3-container w3-padding">
-                  <h6 class="w3-opacity">
-                    Favors
-                  </h6>
-                  <textarea
-                    v-model="post"
-                    contenteditable="true"
-                    class="w3-border w3-padding"
-                    placeholder="Post your issue"
-                  />
-                  {{ post }}
-                  <button
-                    type="button"
-                    class="w3-button w3-theme"
-                    @click="doPost"
-                  >
-                    <i class="fa fa-pencil" />
-                    Post
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="w3-container w3-card w3-white w3-round w3-margin">
-            <br>
-            <img src="@/assets/img/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-            <span class="w3-right w3-opacity">1 min</span>
-            <h4>John Doe</h4><br>
-            <h5><img src="@/assets/img/coin.png" alt="Points" height="20" width="20">: 50</h5>
-            <hr class="w3-clear">
-            <p>I am having a problem in Visual Studio Code when attempting to create a particular class within the .NET version of our project. Does anyone knows how can I fix it?</p>
-            <div class="w3-row-padding" style="margin:0 -16px">
-              <div class="w3-half">
-                <img src="@/assets/img/VSC.gif" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
-              </div>
-              <div class="w3-half">
-                <img src="@/assets/img/VSC.jpeg" style="width:100%" alt="Nature" class="w3-margin-bottom">
-              </div>
-            </div>
-            <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom">
-              <i class="fa fa-thumbs-up" /> Help
-            </button>
-            <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">
-              <i class="fa fa-comment" /> Comment
-            </button>
-          </div>
-
-          <div class="w3-container w3-card w3-white w3-round w3-margin">
-            <br>
-            <img src="@/assets/img/avatar3.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-            <span class="w3-right w3-opacity">16 min</span>
-            <h4>Jane Doe</h4><br>
-            <h5><img src="@/assets/img/coin.png" alt="Points" height="20" width="20">: 50</h5>
-            <hr class="w3-clear">
-            <p>Hi everyone! Unfortunately I have a very important personal commitment on Friday after 3 pm, could someone replace me for a couple of hours?</p>
-            <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom">
-              <i class="fa fa-thumbs-up" />
-              Help
-            </button>
-            <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">
-              <i class="fa fa-comment" />
-              Comment
-            </button>
-          </div>
-
-          <div class="w3-container w3-card w3-white w3-round w3-margin">
-            <br>
-            <img src="@/assets/img/avatar6.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-            <span class="w3-right w3-opacity">32 min</span>
-            <h4>Angie Jane</h4><br>
-            <h5><img src="@/assets/img/coin.png" alt="Points" height="20" width="20">: 50</h5>
-            <hr class="w3-clear">
-            <p>Free accounting course available</p>
-            <img src="@/assets/img/accounting.jpg" style="width:100%" class="w3-margin-bottom">
-            <p>We have a free accounting course available for those who want to develop their skills. The appointment is in the A building on Friday at 6 pm.</p>
-            <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom">
-              <i class="fa fa-thumbs-up" />
-              Assist
-            </button>
-            <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">
-              <i class="fa fa-comment" />
-              Comment
-            </button>
-          </div>
-
-        <!-- End Middle Column -->
-        </div>
-
-        <!-- Right Column -->
-        <div class="w3-col m2">
-          <div class="w3-card w3-round w3-white w3-center">
-            <div class="w3-container">
-              <p>Upcoming Deadlines:</p>
-              <img src="@/assets/img/excel.jpg" alt="Forest" style="width:100%;">
-              <p><strong>Macros Issue</strong></p>
-              <p>Friday 15:00</p>
-              <p>
-                <button class="w3-button w3-block w3-theme-l4">
-                  Info
-                </button>
-              </p>
-            </div>
-          </div>
-          <br>
-
-          <div class="w3-card w3-round w3-white w3-center">
-            <div class="w3-container">
-              <p>Favor Request</p>
-              <img src="@/assets/img/avatar6.png" alt="Avatar" style="width:50%"><br>
-              <span>Jane Doe</span>
-              <div class="w3-row w3-opacity">
-                <div class="w3-half">
-                  <button class="w3-button w3-block w3-green w3-section" title="Accept">
-                    <i class="fa fa-check" />
-                  </button>
-                </div>
-                <div class="w3-half">
-                  <button class="w3-button w3-block w3-red w3-section" title="Decline">
-                    <i class="fa fa-remove" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br>
-
-          <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-            <p>ADS</p>
-          </div>
-          <br>
-
-          <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
-            <p><i class="fa fa-bug w3-xxlarge" /></p>
-          </div>
-
-        <!-- End Right Column -->
-        </div>
-
-        <!-- End Grid -->
-      </div>
-
-    <!-- End Page Container -->
-    </div>
-    <br>
-
-    <!-- Footer -->
-    <footer class="w3-container w3-theme-d3 w3-padding-16">
-      <h5>The Good Network</h5>
-    </footer>
-  </div>
+  <v-container ma-4>
+    <v-row>
+      <v-col>
+        <v-text-field
+          v-model="search"
+          label="Search"
+        />
+        <Favors :favors="favors" />
+          <template slot="title">
+            {{ search }} Favors
+          </template>
+        </Favors>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 <script>
-
 export default {
+  components: {
+    Favors: () => import('@/components/favors/list')
+  },
   data () {
     return {
-      post: null
+      search: null
     }
   },
-  methods: {
-    doPost () {
-      alert('post succesfull' + this.post)
-    },
-
-    // Accordion
-    myFunction (id) {
-      const x = document.getElementById(id)
-      if (!x.className.includes('w3-show')) {
-        x.className += ' w3-show'
-        x.previousElementSibling.className += ' w3-theme-d1'
-      } else {
-        x.className = x.className.replace('w3-show', '')
-        x.previousElementSibling.className =
-          x.previousElementSibling.className.replace(' w3-theme-d1', '')
-      }
-    },
-
-    // Used to toggle the menu on smaller screens when clicking on the menu button
-    openNav () {
-      const x = document.getElementById('navDemo')
-      if (!x.className.includes('w3-show')) {
-        x.className += ' w3-show'
-      } else {
-        x.className = x.className.replace(' w3-show', '')
-      }
+  async asyncData ({ app }) {
+    const result = await app.$axios.get(
+      `favor`
+    )
+    return {
+      favors: result.data
     }
   }
 }
 </script>
-<style scoped>
-  html, body, h1, h2, h3, h4, h5 {
-    font-family: "Open Sans", sans-serif
-  }
+<style>
 </style>

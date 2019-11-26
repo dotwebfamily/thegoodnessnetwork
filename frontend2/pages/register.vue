@@ -142,7 +142,7 @@ export default {
       )
       this.$store.commit('login')
       this.$router.push({
-        path: '/favors'
+        path: '/home'
       })
     }
   }

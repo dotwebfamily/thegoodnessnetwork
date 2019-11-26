@@ -76,11 +76,17 @@ app.get('/db', function(req, res) {
 })
 
 const auth = require('./routes/auth')
-const favors = require('./routes/favors')
+const favors = require('./routes/favor')
+const users = require('./routes/user')
+const organization = require('./routes/organization')
 
 app.use('/auth', auth.route)
-app.use('/favors', auth.middleware)
-app.use('/favors', favors)
+app.use('/favor', auth.middleware)
+app.use('/favor', favors)
+app.use('/user', auth.middleware)
+app.use('/user', users)
+app.use('/organization', auth.middleware)
+app.use('/organization', organization)
 
 app.listen(PORT, function(){
   console.log(`Example app listening on PORT ${PORT}!`)

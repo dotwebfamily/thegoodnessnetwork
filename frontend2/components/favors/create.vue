@@ -48,13 +48,19 @@ export default {
   data () {
     return {
       valid: false,
-      favor: {}
+      favor: {},
+      rules: {
+        required: value => !!value || 'Required.',
+        min: v => v ? v.length >= 8 || 'Min 8 characters' : false,
+        email: v => /.+@.+\..+/.test(v) || 'Invalid Email address'
+      }
     }
   },
   methods: {
     submit (e) {
       e.preventDefault()
-      this.$emit('submit', this.favor)
+      this.$emit('submit', Object.assign({}, this.favor))
+      this.favor = {}
     }
   }
 }
