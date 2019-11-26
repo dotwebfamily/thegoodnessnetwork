@@ -29,7 +29,7 @@
 export default {
   async asyncData ({ app }) {
     const result = await app.$axios.get(
-      `/favors`
+      `favor`
     )
     return {
       favors: result.data

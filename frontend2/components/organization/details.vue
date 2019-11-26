@@ -5,8 +5,8 @@
     </v-card-title>
     <v-divider />
     <v-card-text>
-      <li><b>Name:</b> {{organization.name}}</li>
-      <li><b>Domain:</b> {{organization.domain}}</li>
+      <li><b>Name:</b> {{ organization.name }}</li>
+      <li><b>Domain:</b> {{ organization.domain }}</li>
     </v-card-text>
   </v-card>
 </template>

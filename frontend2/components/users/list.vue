@@ -1,14 +1,14 @@
 <template>
   <v-card>
     <v-card-title>
-      Users-List
+      Members
     </v-card-title>
     <v-list>
       <v-list-item
         v-for="(user,index) in users"
         :key="index"
       >
-        {{ user | json }}
+        <h4>{{ index+1 }}.- {{ user.email }}</h4>
       </v-list-item>
       <v-list-item v-if="users.length===0">
         {{ emptyMessage }}
