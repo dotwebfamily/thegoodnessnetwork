@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-title>
-      Organization Requested Favors
+      <slot name="title"/>
     </v-card-title>
     <v-card-text>
       <v-list>

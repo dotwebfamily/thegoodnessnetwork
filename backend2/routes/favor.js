@@ -11,7 +11,7 @@ router.get('/', function(req, res){
 
 router.get('/:id', function(req, res){
   const favor = new Favor(req)
-  favor.find(req.body.id).then(function(results){
+  favor.find(req.params.id).then(function(results){
     res.send(results)
   })
 })

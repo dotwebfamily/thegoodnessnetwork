@@ -65,7 +65,10 @@ router.post('/register', function(req, res){
         }
       })
     else {
-      res.send({message:'Organization not yet registered',confirm:true}) 
+      res.send({
+        message:'Organization not yet registered',
+        confirm:true
+      }) 
     }
   })
 })

@@ -21,7 +21,11 @@
                   <CreateFavor @submit="addFavor" />
                 </v-col>
                 <v-col cols="12" md="8">
-                  <Favors :favors="favors" />
+                  <Favors :favors="favors">
+                    <template slot="title">
+                      Organization Requested Favors
+                    </template>
+                  </Favors>
                 </v-col>
               </v-row>
             </v-container>
@@ -33,7 +37,7 @@
                   <CreateUser @submit="addMember" />
                 </v-col>
                 <v-col cols="12" md="8">
-                  <Users :users="users"  />
+                  <Users :users="users" />
                 </v-col>
               </v-row>
             </v-container>
