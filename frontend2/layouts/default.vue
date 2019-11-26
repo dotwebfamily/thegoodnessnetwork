@@ -72,7 +72,7 @@ export default {
         action: this.logout
       }
     ]
-    if (this.$store.state.user.admin) {
+    if (!this.$store.state.user.admin) {
       menu.shift()
     }
     return {

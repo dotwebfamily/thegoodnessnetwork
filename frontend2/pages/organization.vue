@@ -18,7 +18,7 @@
             <v-container>
               <v-row>
                 <v-col cols="12" md="4" :order="formOrder">
-                  <CreateFavor />
+                  <CreateFavor @submit="addFavor" />
                 </v-col>
                 <v-col cols="12" md="8">
                   <Favors :favors="favors" />
@@ -33,7 +33,7 @@
                   <CreateUser />
                 </v-col>
                 <v-col cols="12" md="8">
-                  <Users :users="users" />
+                  <Users :users="users" @submit="addMember" />
                 </v-col>
               </v-row>
             </v-container>
@@ -59,23 +59,48 @@ export default {
   },
   async asyncData ({ app, store }) {
     const domain = store.state.user.organization
-    // get organization information
-    const response = await Promise.all([
-      app.$axios.get(`organization/${domain}`),
-      // get favors
-      app.$axios.get('favor'),
-      // get users
-      app.$axios.get(`organization/${domain}/users`)
-    ])
-    const [
-      organization,
-      favors,
-      users
-    ] = response.map(x => x.data)
-    return {
-      organization,
-      favors,
-      users
+    try {
+      // get organization information
+      const response = await Promise.all([
+        app.$axios.get(`organization/${domain}`),
+        // get favors
+        app.$axios.get(`organization/${domain}/favors`),
+        // get users
+        app.$axios.get(`organization/${domain}/users`)
+      ])
+      const [
+        organization,
+        favors,
+        users
+      ] = response.map(x => x.data)
+      return {
+        organization,
+        favors,
+        users
+      }
+    } catch (e) {
+      app.$alert('No se pudieron hacer los requests', 'error')
+    }
+  },
+  methods: {
+    async addFavor (favor) {
+      const domain = this.$store.state.user.organization
+      try {
+        await this.$axios.post(`organization/${domain}/favors`, { favor })
+        this.favors.push(favor)
+        this.$alert('Agregado exitosamente')
+      } catch (e) {
+        this.$alert('No se pudo agregar', 'error')
+      }
+    },
+    async addMember (member) {
+      try {
+        await this.$axios.post(`auth/register`, { ...member })
+        this.users.push(member)
+        this.$alert('Agregado exitosamente')
+      } catch (e) {
+        this.$alert('No se pudo agregar', 'error')
+      }
     }
   }
 }

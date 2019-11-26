@@ -10,11 +10,12 @@
             <v-list-item v-for="(item,index) in favors" :key="index">
               <v-card-title>
                 <h3> {{ item.title }}</h3>
+                <h5> $ {{ item.coins }}</h5>
               </v-card-title>
               <v-card-subtitle>
                 <br>
                 <p>
-                  {{ item.description }}<br>
+                  {{ item.description }} <br>
                   : {{ item.deadline }}
                 </p>
               </v-card-subtitle>
