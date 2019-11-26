@@ -20,6 +20,11 @@ export default {
   components: {
     Favors: () => import('@/components/favors/list')
   },
+  data () {
+    return {
+      search: null
+    }
+  },
   async asyncData ({ app }) {
     const result = await app.$axios.get(
       `favor`
