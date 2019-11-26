@@ -6,10 +6,17 @@
   >
     <h4> Create User</h4>
     <v-text-field
-      v-model="user"
-      label="user"
+      v-model="user.email"
+      placeholder="Email"
+      :rules="[rules.required, rules.email]"
     />
-    <v-btn :disabled="!valid">
+    <v-text-field
+      v-model="user.password"
+      placeholder="Password"
+      :rules="[rules.required, rules.min]"
+      type="password"
+    />
+    <v-btn :disabled="!valid" type="submit">
       Submit
     </v-btn>
   </v-form>
@@ -19,12 +26,19 @@ export default {
   data () {
     return {
       valid: false,
-      user: null
+      user: {},
+      rules: {
+        required: value => !!value || 'Required.',
+        min: v => v ? v.length >= 8 || 'Min 8 characters' : false,
+        email: v => /.+@.+\..+/.test(v) || 'Invalid Email address'
+      }
     }
   },
   methods: {
-    submit () {
-      this.$alert('Not yet implemented!')
+    submit (e) {
+      e.preventDefault()
+      this.$emit('submit', Object.assign({}, this.user))
+      this.user = {}
     }
   }
 }

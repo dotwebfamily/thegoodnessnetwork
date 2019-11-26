@@ -30,10 +30,10 @@
             <v-container>
               <v-row>
                 <v-col cols="12" md="4" :order="formOrder">
-                  <CreateUser />
+                  <CreateUser @submit="addMember" />
                 </v-col>
                 <v-col cols="12" md="8">
-                  <Users :users="users" @submit="addMember" />
+                  <Users :users="users"  />
                 </v-col>
               </v-row>
             </v-container>
@@ -96,6 +96,8 @@ export default {
     async addMember (member) {
       try {
         await this.$axios.post(`auth/register`, { ...member })
+        console.log(this.$store.state.user)
+        member.creator = this.$store.state.user.email
         this.users.push(member)
         this.$alert('Agregado exitosamente')
       } catch (e) {

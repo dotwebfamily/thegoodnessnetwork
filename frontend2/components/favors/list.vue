@@ -11,10 +11,11 @@
         >
           <v-card class="pa-4 mt-4" width="100%">
             <v-card-title>
-              <h3> {{ favor.title }}</h3>
+              <h3> {{ favor.title }} </h3> &nbsp;
+              <h5> ${{ favor.coins }}</h5>
             </v-card-title>
             <v-card-content>
-              <p> {{ favor.descripcion }}</p>
+              <p> {{ favor.description }}</p>
               <small class="text-right">
                 {{ favor.creator }}: {{ favor.deadline }}
               </small>
