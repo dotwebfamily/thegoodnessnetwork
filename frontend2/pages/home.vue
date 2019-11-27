@@ -6,7 +6,7 @@
           v-model="search"
           label="Search"
         />
-        <Favors :favors="favors" />
+        <Favors :favors="favors"/>
           <template slot="title">
             {{ search }} Favors
           </template>
