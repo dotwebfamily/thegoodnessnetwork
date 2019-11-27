@@ -71,15 +71,15 @@ export default {
   margin-bottom: 7.5%;
 }
 .background{
-  background-color: #B3B3B3;
-  color: black;
+  background-color: #374C56 !important;
+  color: #ccc;
 }
 .text{
-  color: black;
+  color: #ccc;
 }
 .text-align{
-  color:black;
-   text-align:right;
+  color:#ccc;
+  text-align:right;
 }
 .border{
   border-style: solid;
