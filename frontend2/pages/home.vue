@@ -136,8 +136,6 @@ export default {
       this.favors = results === undefined ? this.favors : results
     },
     async addFavor (favor) {
-      // implement
-      this.add = false
       try {
         const response = await this.$axios.post(
           '/favor',
@@ -145,22 +143,11 @@ export default {
         )
         if (response) {
           this.searchFavors()
+          this.$store.commit('discount', favor.coins)
+          this.add = false
         }
       } catch (e) {
-        console.log(e)
         this.$alert(e.response.data, 'error')
-      }
-    },
-    async addService (service) {
-      this.add = false
-      try {
-        await this.$axios.post(
-          '/service',
-          service
-        )
-        this.services.push(service)
-      } catch (e) {
-        this.$alert('Couldn\'t add service', 'error')
       }
     },
     async acceptFavor (favor) {

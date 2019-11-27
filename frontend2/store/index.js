@@ -4,6 +4,9 @@ export const state = () => ({
 })
 
 export const mutations = {
+  discount (state, coins) {
+    state.user.coins -= coins
+  },
   login (state) {
     state.authenticated = true
   },

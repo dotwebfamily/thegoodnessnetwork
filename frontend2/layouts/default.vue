@@ -62,12 +62,12 @@ export default {
         link: '/organization'
       },
       {
-        title: 'Home',
-        icon: 'mdi-home',
+        title: 'Search',
+        icon: 'mdi-magnify',
         link: '/home'
       },
       {
-        title: 'Profile',
+        title: 'My Favors',
         icon: 'mdi-account',
         link: '/profile'
       },
