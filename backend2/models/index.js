@@ -1,4 +1,5 @@
 const debug = require('debug')
+const {ObjectId} = require('mongodb');
 class User{
   constructor(req){
     this.db = req.db 
@@ -7,6 +8,7 @@ class User{
     this.ldebug = debug('app/models/user')
   }
   async create(obj) {
+    obj.coins = 0
     const res = await this.col.insertOne(obj)
     return res.result.ok
   }
@@ -61,15 +63,27 @@ class Favor{
     this.db = req.db 
     this.session = req.session
     this.col = this.db.db().collection('favor')
-    this.ldebug = debug('app/models/favoe')
+    this.ldebug = debug('app/models/favor')
   }
   async create(obj) {
-    const res = await this.col.insertOne(obj)
-    return res.result.ok
+    const user = this.db.db().collection('user')
+    const email = this.session.email
+    const myUser = await user.find({'email':email}).toArray()
+    if (myUser[0].coins < obj.coins)
+      return -1
+    obj.creator = this.session.email 
+    obj.status = 'open'
+    const newCoins = myUser[0].coins - obj.coins
+    const [res1,res2] = await Promise.all([
+      this.col.insertOne(obj),
+      user.updateOne({'email':email},{'$set': {coins: newCoins}}),
+    ])
+    return res1.result.ok && res2.result.nModified
   }
-  async fromDomain(obj,creator) {
+  async fromDomain(obj) {
     obj.organization = true
-    obj.creator = creator 
+    obj.creator = this.session.email 
+    obj.status = 'open'
     const res = await this.col.insertOne(obj)
     return res.result.ok
   }
@@ -84,7 +98,56 @@ class Favor{
     return res[0]
   }
   async findAll() {
-    return await this.col.find().toArray() 
+    const domain = this.session.organization
+    return await this.col.find({
+      'creator':{
+        '$regex':`@${domain}\$`
+      }
+    }).toArray() 
+  }
+  async findAllOpen() {
+    const domain = this.session.organization
+    return await this.col.find({
+      'creator':{
+        '$regex':`@${domain}\$`
+      },
+      status: 'open'
+    }).toArray() 
+  }
+  async findAllDoing() {
+    const domain = this.session.organization
+    return await this.col.find({
+      doer: this.session.email
+    }).toArray() 
+  }
+  async findAllGiven() {
+    const domain = this.session.organization
+    return await this.col.find({
+      creator: this.session.email
+    }).toArray() 
+  }
+  async search(search) {
+    const domain = this.session.organization
+    return await this.col.find({
+      '$or':[
+        {
+          'title': {
+            '$regex':`${search}`,
+            '$options': 'i'
+          }
+        },
+        {
+          'description': {
+            '$regex':`${search}`,
+            '$options': 'i'
+          },
+        }
+      ],
+      'creator':{
+        '$regex':`@${domain}\$`,
+      },
+      status: 'open'
+    }).toArray() 
   }
   async byDomain(domain) {
     const res = await this.col.find({
@@ -95,6 +158,59 @@ class Favor{
     }).toArray()
     this.ldebug(res)
     return res
+  }
+  async accept(id) {
+    this.ldebug(id)
+    const res = await this.col.updateOne({
+      _id:ObjectId(id)
+    },{
+      $set: { 
+        status: 'accepted',
+        doer: this.session.email 
+      }
+    })
+    this.ldebug(res.result.nModified)
+    return res.result.nModified
+  }
+  async done(id) {
+    this.ldebug(id)
+    const res = await this.col.updateOne({
+      _id:ObjectId(id)
+    },{
+      $set: { 
+        status: 'done',
+      }
+    })
+    this.ldebug(res.result.nModified)
+    return res.result.nModified
+  }
+  async notDone(id) {
+    this.ldebug(id)
+    const res = await this.col.updateOne({
+      _id:ObjectId(id)
+    },{
+      $set: { 
+        status: 'accepted',
+      }
+    })
+    this.ldebug(res.result.nModified)
+    return res.result.nModified
+  }
+  async completed(id) {
+    this.ldebug(id)
+    const res1 = await this.col.findOneAndUpdate({
+      _id:ObjectId(id)
+    },{
+      $set: { 
+        status: 'completed',
+      }
+    })
+    const user = this.db.db().collection('user')
+    const value = res1.value
+    const res2 = await user.updateOne({'email':value.doer},{
+      $inc:{coins: parseInt(value.coins)}
+    })
+    return res1.ok && res2.result.nModified
   }
 }
 module.exports.Favor = Favor

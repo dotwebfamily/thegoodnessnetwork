@@ -27,6 +27,7 @@ router.post('/login', function(req, res){
         user: {
           email: user.email,
           admin: user.admin,
+          coins: user.coins,
           organization: domain
         }
       })
