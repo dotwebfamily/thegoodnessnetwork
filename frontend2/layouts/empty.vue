@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="background">
     <nuxt />
   </v-app>
 </template>
@@ -7,3 +7,5 @@
 export default {
 }
 </script>
+<style scoped>
+</style>

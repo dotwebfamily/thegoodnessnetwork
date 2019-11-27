@@ -1,6 +1,6 @@
 <template>
   <v-expansion-panels>
-    <v-expansion-panel>
+    <v-expansion-panel color="blue-grey darken-3">
       <v-expansion-panel-header class="background">
         <h4> Create Favor</h4>
       </v-expansion-panel-header>
@@ -71,13 +71,6 @@ export default {
 </script>
 <style scoped>
 .field{
-  background-color: #4B4B4B;
   border-radius: 5px;
-  padding: 5%;
-  margin-bottom: 7.5%;
-}
-.background{
-  background-color: #B3B3B3;
-  color: black;
 }
 </style>

@@ -28,7 +28,7 @@ module.exports = {
    */
   css: [],
   env: {
-    backendUrl: process.env.BACKEND_URL || 'http://localhost:4000'
+    backendUrl: process.env.BACKEND_URL || 'https://backend-dot-proyecto-integrador-red-social.appspot.com'
   },
   /*
    ** Plugins to load before mounting the App

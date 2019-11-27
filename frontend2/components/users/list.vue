@@ -35,10 +35,8 @@ export default {
 .field{
   padding-top: 5%;
   padding-bottom: 5%;
-  background-color: #B3B3B3;
 }
 .text{
-  color: #2F2F2F;
 }
 .border{
   border-style: solid;

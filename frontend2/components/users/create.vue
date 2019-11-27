@@ -48,15 +48,7 @@ export default {
 }
 </script>
 <style scoped>
-.field{
-  background-color: #4B4B4B;
-  border-radius: 5px;
-  padding: 5%;
-  margin-bottom: 7.5%;
-}
 .background{
-  background-color: #B3B3B3;
   padding: 5%;
-  color: black;
 }
 </style>

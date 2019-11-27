@@ -23,15 +23,10 @@ export default {
 <style scoped>
 li{
   font-size: 125%;
-  color: black;
+  color: #ccc;
 }
 .title{
   font-size: 125%;
-  background-color: #181818;
   color: white;
-}
-.background{
-  background-color: #B3B3B3;
-  color: black;
 }
 </style>
