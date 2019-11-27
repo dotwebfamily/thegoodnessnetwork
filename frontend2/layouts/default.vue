@@ -10,7 +10,7 @@
         <v-list-item two-line>
           <v-list-item-content>
             <v-list-item-title class="title">
-              {{ $store.state.user.email }}
+              {{ $store.state.user.email }} $ {{ $store.state.user.coins }}
             </v-list-item-title>
             <v-list-item-subtitle>
               From {{ $store.state.user.organization }}

@@ -1,0 +1,23 @@
+open
+  regular list
+accept
+  regular list
+  select and send messages
+mark as done
+  can't send anything anymore
+confirm its done
+  send to completed
+  reject send to accept
+
+Views to add
+  Profile my posted favors
+    open
+    accepted
+    done
+    completed  
+
+  Profile ongoing favors
+    accepted
+    pending confirmation
+    completed
+  

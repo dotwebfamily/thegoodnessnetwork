@@ -2,66 +2,29 @@
   <v-container ma-4>
     <v-row>
       <v-col>
-        <v-tabs v-model="tab">
-          <v-tab href="#services">
-           Services
-          </v-tab>
-          <v-tab href="#favors">
-            Favors
-          </v-tab>
-          <v-tab-item value="favors" class="pa-4">
-            <template v-if="!add">
-              <v-btn @click="add = true" class="mb-4">
-                Add Favor
-              </v-btn>
-              <v-text-field
-                v-model="search"
-                label="Search"
-                @input="searchFavors"
-              />
-              <Favors :favors="favors">
-                <template slot="title">
-                  <span class="text-capitalize">
-                    {{ search }} favors
-                  </span>
-                </template>
-              </Favors>
+        <template v-if="!add">
+          <v-text-field
+            v-model="search"
+            label="Search"
+            @input="searchFavors"
+          />
+          <v-btn class="mb-4" @click="add = true">
+            Add Favor
+          </v-btn>
+          <Favors :favors="favors" :actions="favorActions">
+            <template slot="title">
+              <span class="text-capitalize">
+                {{ search }} favors
+              </span>
             </template>
-            <template v-if="add">
-              <v-btn @click="add = false" class="mb-4">
-                return
-              </v-btn>
-              <CreateFavor @submit="addFavor" />
-            </template>
-          </v-tab-item>
-          <v-tab-item value="services" class="pa-4">
-            <template v-if="!add">
-              <v-btn @click="add = true" class="mb-4">
-                Add Service
-              </v-btn>
-              <v-text-field
-                v-model="search"
-                label="Search"
-                @input="searchFavors"
-              />
-              <Favors :favors="favors">
-                <template slot="title">
-                  <span class="text-capitalize">
-                    {{ search }} services
-                  </span>
-                </template>
-              </Favors>
-            </template>
-            <template v-if="add">
-              <v-btn @click="add = false" class="mb-4">
-                return
-              </v-btn>
-              <CreateFavor @submit="addFavor" />
-            </template>
-          </v-tab-item>
-          <v-tab-item value="services">
-          </v-tab-item>
-        </v-tabs>
+          </Favors>
+        </template>
+        <template v-if="add">
+          <v-btn class="mb-4" @click="add = false">
+            return
+          </v-btn>
+          <CreateFavor @submit="addFavor" />
+        </template>
       </v-col>
     </v-row>
   </v-container>
@@ -76,13 +39,17 @@ export default {
   data () {
     return {
       add: false,
-      search: null
+      search: '',
+      favorActions: [{
+        title: 'accept',
+        action: this.acceptFavor
+      }]
     }
   },
   async asyncData ({ app }) {
     try {
       const result = await app.$axios.get(
-        `favor`
+        `favor/open`
       )
       const updateFavors = (() => {
         const CancelToken = axios.CancelToken
@@ -119,7 +86,7 @@ export default {
       if (this.search === '') {
         try {
           const response = await this.$axios.get(
-            `favor`
+            `favor/open`
           )
           this.favors = response.data
         } catch (e) {
@@ -129,6 +96,45 @@ export default {
       }
       const results = await this.updateFavors(this.search)
       this.favors = results === undefined ? this.favors : results
+    },
+    async addFavor (favor) {
+      // implement
+      this.add = false
+      try {
+        const response = await this.$axios.post(
+          '/favor',
+          favor
+        )
+        if (response) {
+          this.searchFavors()
+        }
+      } catch (e) {
+        console.log(e)
+        this.$alert(e.response.data, 'error')
+      }
+    },
+    async addService (service) {
+      this.add = false
+      try {
+        await this.$axios.post(
+          '/service',
+          service
+        )
+        this.services.push(service)
+      } catch (e) {
+        this.$alert('Couldn\'t add service', 'error')
+      }
+    },
+    async acceptFavor (favor) {
+      try {
+        console.log(favor._id)
+        await this.$axios.get(
+          `/favor/accept/${favor._id}`
+        )
+        this.searchFavors()
+      } catch (e) {
+        this.$alert('Couldn\'t accept favor', 'error')
+      }
     }
   }
 }

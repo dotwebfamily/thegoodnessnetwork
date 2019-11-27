@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-title>
-      <slot name="title"/>
+      <slot name="title" />
     </v-card-title>
     <v-card-text>
       <v-list>
@@ -22,6 +22,15 @@
                 {{ favor.creator }} needs it before {{ favor.deadline }}
               </small>
             </v-card-text>
+            <v-card-actions v-if="actions.length>0">
+              <v-btn
+                v-for="(btn,actionIndex) in actions"
+                :key="actionIndex"
+                @click="btn.action(favor)"
+              >
+                {{ btn.title }}
+              </v-btn>
+            </v-card-actions>
           </v-card>
         </v-list-item>
         <v-list-item v-if="favors.length===0">
@@ -35,6 +44,10 @@
 export default {
   props: {
     favors: {
+      type: Array,
+      default: Array
+    },
+    actions: {
       type: Array,
       default: Array
     },
