@@ -13,6 +13,7 @@
         :rules="rules"
         read-only
         v-on="on"
+        class="field"
       />
     </template>
     <v-date-picker
@@ -94,4 +95,10 @@ export default {
 }
 </script>
 <style scoped>
+.field{
+  background-color: #4B4B4B;
+  border-radius: 5px;
+  padding: 5%;
+  margin-bottom: 7.5%;
+}
 </style>
