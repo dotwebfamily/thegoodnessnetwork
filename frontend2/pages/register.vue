@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row align="center" justify="center">
       <v-col cols="4" md="8" class="image">
-        <img src="~/assets/img/background.jpg">
+        <img src="~/assets/img/background.png">
       </v-col>
       <v-col
         v-show="!confirmOrganization"
@@ -161,5 +161,8 @@ img {
 }
 .container,.image {
   padding: 0;
+}
+.theme--dark.v-application {
+  background-color: #263238;
 }
 </style>

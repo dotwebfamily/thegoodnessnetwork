@@ -12,8 +12,8 @@
         :value="dateFormatted"
         :rules="rules"
         read-only
-        v-on="on"
         class="field"
+        v-on="on"
       />
     </template>
     <v-date-picker
@@ -96,9 +96,13 @@ export default {
 </script>
 <style scoped>
 .field{
-  background-color: #4B4B4B;
   border-radius: 5px;
-  padding: 5%;
-  margin-bottom: 7.5%;
+  margin-bottom: 5%;
+}
+.border {
+  border-style: solid;
+  border-color: white;
+  border-width: 5px;
+
 }
 </style>

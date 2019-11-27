@@ -114,7 +114,7 @@ export default {
 <style scoped>
 .border{
   border-style: solid;
-  border-color: #5F5F5F;
+  border-color: white;
   border-width: 5px;
 }
 </style>

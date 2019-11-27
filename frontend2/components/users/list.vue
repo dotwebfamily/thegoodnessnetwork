@@ -9,7 +9,9 @@
         v-for="(user,index) in users"
         :key="index"
       >
-        <h4 class="text">{{ index+1 }}.- {{ user.email }}</h4>
+        <h4 class="text">
+          {{ index+1 }}.- {{ user.email }}
+        </h4>
       </v-list-item>
       <v-list-item v-if="users.length===0">
         {{ emptyMessage }}
@@ -40,7 +42,7 @@ export default {
 }
 .border{
   border-style: solid;
-  border-color: #5F5F5F;
+  border-color: white;
   border-width: 5px;
 }
 </style>

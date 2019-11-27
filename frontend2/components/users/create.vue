@@ -7,14 +7,14 @@
     <div class="background">
       <h4> Create User</h4>
       <v-text-field
-        class="field"
         v-model="user.email"
+        class="field"
         placeholder="Email"
         :rules="[rules.required, rules.email]"
       />
       <v-text-field
-        class="field"
         v-model="user.password"
+        class="field"
         placeholder="Password"
         :rules="[rules.required, rules.min]"
         type="password"

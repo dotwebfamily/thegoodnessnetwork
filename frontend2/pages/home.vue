@@ -29,7 +29,7 @@
       </v-col>
     </v-row>
     <div>
-      <footer class="w3-container w3-padding-32 w3-dark-grey">
+      <footer class="w3-container w3-padding-32">
         <div class="w3-row-padding">
           <div class="w3-third">
             <h3>The Good Network</h3>
@@ -164,8 +164,11 @@ export default {
   }
 }
 </script>
-<style>
-.container{
-  padding-right: 3%;
-}
+<style scoped>
+  .container{
+    padding-right: 3%;
+  }
+  .w3-container{
+    background-color: #37464e;
+  }
 </style>

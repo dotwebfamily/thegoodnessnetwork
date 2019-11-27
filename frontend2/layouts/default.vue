@@ -101,3 +101,34 @@ export default {
   }
 }
 </script>
+<style scoped>
+.theme--dark.v-application {
+  background: url(../assets/img/background.png);
+}
+.theme--dark.v-navigation-drawer {
+  background-color: #263238;
+}
+::v-deep .border {
+  border-color: #37464e !important;
+}
+::v-deep .theme--dark.v-expansion-panels .v-expansion-panel {
+  background-color: #37464e;
+}
+::v-deep .theme--dark.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+  color: #263238;
+  background-color: #acdff9;
+}
+::v-deep .theme--dark.v-card {
+  background-color: #263238;
+}
+::v-deep .theme--dark.v-list {
+  background-color: #263238;
+}
+::v-deep .theme--dark.v-tabs > .v-tabs-bar {
+  background-color: #37464e;
+  color: white;
+}
+::v-deep .theme--dark.v-tabs-items {
+  background-color: #263238;
+}
+</style>
