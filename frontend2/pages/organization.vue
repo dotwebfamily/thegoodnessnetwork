@@ -7,7 +7,7 @@
     </v-row>
     <v-row>
       <v-col>
-        <v-tabs v-model="tab">
+        <v-tabs v-model="tab" class="border">
           <v-tab href="#users">
             Users
           </v-tab>
@@ -112,4 +112,9 @@ export default {
 }
 </script>
 <style scoped>
+.border{
+  border-style: solid;
+  border-color: #5F5F5F;
+  border-width: 5px;
+}
 </style>

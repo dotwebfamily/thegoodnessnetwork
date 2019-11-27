@@ -1,10 +1,10 @@
 <template>
   <v-expansion-panels>
     <v-expansion-panel>
-      <v-expansion-panel-header>
+      <v-expansion-panel-header class="background">
         <h4> Create Favor</h4>
       </v-expansion-panel-header>
-      <v-expansion-panel-content>
+      <v-expansion-panel-content class="background">
         <v-form
           v-model="valid"
           class="pa-4"
@@ -14,6 +14,7 @@
             v-model="favor.title"
             label="Title"
             placeholder="This is what people will first see!"
+            class="field"
           />
           <v-text-field
             v-model="favor.coins"
@@ -21,16 +22,19 @@
             placeholder="0"
             prefix="$"
             suffix=".00"
+            class="field"
           />
           <date-picker
             v-model="favor.deadline"
             label="Deadline"
             placeholder="DD/MM/YY"
+            class="field"
           />
           <v-textarea
             v-model="favor.description"
             label="Description"
             placeholder="Tell us more details! Acceptance criteria, the story behind it"
+            class="field"
           />
           <v-btn :disabled="!valid" type="submit">
             Submit
@@ -66,4 +70,14 @@ export default {
 }
 </script>
 <style scoped>
+.field{
+  background-color: #4B4B4B;
+  border-radius: 5px;
+  padding: 5%;
+  margin-bottom: 7.5%;
+}
+.background{
+  background-color: #B3B3B3;
+  color: black;
+}
 </style>

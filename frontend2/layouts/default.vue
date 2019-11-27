@@ -10,7 +10,12 @@
         <v-list-item two-line>
           <v-list-item-content>
             <v-list-item-title class="title">
-              {{ $store.state.user.email }} $ {{ $store.state.user.coins }}
+              <div>
+                <img src="../assets/img/student_icon.png" style="width:45%;">
+              </div>
+              <div>
+                {{ $store.state.user.email }} $ {{ $store.state.user.coins }}
+              </div>
             </v-list-item-title>
             <v-list-item-subtitle>
               From {{ $store.state.user.organization }}

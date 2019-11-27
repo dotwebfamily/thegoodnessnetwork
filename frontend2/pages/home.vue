@@ -1,5 +1,6 @@
 <template>
-  <v-container ma-4>
+  <v-container ma-4 fluid>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <v-row>
       <v-col>
         <template v-if="!add">
@@ -27,6 +28,43 @@
         </template>
       </v-col>
     </v-row>
+    <div>
+      <footer class="w3-container w3-padding-32 w3-dark-grey">
+        <div class="w3-row-padding">
+          <div class="w3-third">
+            <h3>The Good Network</h3>
+            <p>Caring for everyone, The Good Network has created a platform that sees the future of the company and that of all the members in it. Contact us:</p>
+            <p>Via web: <a href="https://mitec.itesm.mx" target="_blank">info.thegoodnet.mx</a></p>
+            <p>Via e-mail: <a href="https://mitec.itesm.mx" target="_blank">info-portal@tgnet.mx</a></p>
+          </div>
+          <div class="w3-third">
+            <h3>BLOG POSTS</h3>
+            <ul class="w3-ul w3-hoverable">
+              <li class="w3-padding-16">
+                <img src="../assets/img/david-garza.png" class="w3-left w3-margin-right" style="width:50px">
+                <span class="w3-large">Dispatch</span><br>
+                <span>From Enrique Estremadoyro.</span>
+              </li>
+              <li class="w3-padding-16">
+                <img src="../assets/img/students.jpg" class="w3-left w3-margin-right" style="width:50px">
+                <span class="w3-large">Proud for our co-workers</span><br>
+                <span>News...</span>
+              </li>
+            </ul>
+          </div>
+          <div class="w3-third">
+            <h3>POPULAR TAGS</h3>
+            <p>
+              <span class="w3-tag w3-black w3-margin-bottom">The Good Network</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Help</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Opportunities</span>
+              <span class="w3-tag w3-grey w3-small w3-margin-bottom">Other Places</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Job Opportunities</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Our Work</span>
+              <span class="w3-tag w3-grey w3-small w3-margin-bottom">Coins</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Best employees</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Our Mission</span>
+              <span class="w3-tag w3-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Bylaw</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Store</span>
+              <span class="w3-tag w3-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">More</span>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
   </v-container>
 </template>
 <script>
@@ -140,4 +178,7 @@ export default {
 }
 </script>
 <style>
+.container{
+  padding-right: 3%;
+}
 </style>
