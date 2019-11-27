@@ -20,7 +20,7 @@
                   {{ favor.creator }} needs it before {{ favor.deadline }}
                </div>
               </small>
-               <div class="text">
+               <div class="text-align">
                   ${{ favor.coins }} coins
                 </div>
             </v-card-text>
@@ -60,6 +60,11 @@ export default {
 }
 .text{
   color: black;
+}
+.text-align{
+  color:black;
+   text-align:right;
+
 }
 .border{
   border-style: solid;
