@@ -1,4 +1,8 @@
 runtime: nodejs10
-
-env_variables:
-   DEBUG: "app/*,tests/*"
+service: backend
+manual_scaling:
+  instances: 1
+resources:
+  cpu: .5
+  memory_gb: 0.5
+  disk_size_gb: 10

@@ -1,22 +1,30 @@
-runtime: python27
-api_version: 1
-threadsafe: true
+runtime: nodejs10
+
+manual_scaling:
+  instances: 1
+
+resources:
+  cpu: .5
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+instance_class: B2
 
 handlers:
-  
-- url: /css
-  static_dir: css
-  
-- url: /images
-  static_dir: images
+  - url: /_nuxt
+    static_dir: .nuxt/dist/client
+    secure: always
 
-- url: /bootstrap-4.2.1-dist
-  static_dir: bootstrap-4.2.1-dist
+  - url: /(.*\.(gif|png|jpg|ico|txt))$
+    static_files: static/\1
+    upload: static/.*\.(gif|png|jpg|ico|txt)$
+    secure: always
 
-- url: /
-  static_files: www/index.html
-  upload: www/index.html
+  - url: /.*
+    script: auto
+    secure: always
 
-- url: /(.*)
-  static_files: www/\1
-  upload: www/(.*)
+env_variables:
+  HOST: '0.0.0.0'
+  NODE_ENV: 'production'
+  BACKEND_URL: 'http://backend-dot-proyecto-integrador-red-social.appspot.com/'
