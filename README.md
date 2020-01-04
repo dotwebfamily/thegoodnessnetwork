@@ -2,7 +2,7 @@
 
 Welcome to our humble project!!
 
-The goodness network is a website intended to help those in need and promote helping others. On itself the goodness network is a webapp which helps those who are good to quantify the goodness they have done. This is important as reputation and help are essential to the networks purpose. The network's purpose is to provide a community of people who help others periodically, this help will help the good ones, those who have helped when they need it.
+The goodness network is a webapp intended to help those in need and promote helping others. On itself the goodness network is a webapp which helps those who are good to quantify the goodness they have done. This is important as reputation and help are essential to the networks purpose. The network's purpose is to provide a community of people who help others periodically, this help will help the good ones, those who have helped when they need it.
 
 This is achieved through a system of help requests, goodness coins and ranking.
 - When one helps, he receives goodness coins
